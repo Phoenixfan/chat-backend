@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonJs",
+    "target": "ES3",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ]
+}
