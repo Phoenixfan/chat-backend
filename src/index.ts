@@ -8,8 +8,6 @@ const app = express();
 const port = 8080;
 
 import { authRouter } from "./Routes/Auth";
-import {receiveRouter} from "./Routes/Receive";
-import {sendRouter} from "./Routes/Send";
 import {resetRouter} from "./Routes/Reset";
 
 app.use(express.urlencoded({ extended: true }));
@@ -20,8 +18,6 @@ app.listen( port, () => {
 });
 
 app.use("/auth", authRouter);
-app.use("/receive", receiveRouter);
-app.use("/send", sendRouter);
 app.use("/reset", resetRouter);
 
 // define a route handler for the default home page
