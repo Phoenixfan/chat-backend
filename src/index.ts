@@ -1,16 +1,14 @@
 import mongoose from "mongoose";
 
-mongoose.connect('mongodb://127.0.0.1:27017/', {dbName: "chat"});
+mongoose.connect('mongodb://mongo:27017/', {dbName: "chat"});
 console.log("MongoDB Connected!");
 
 import express from "express";
 const app = express();
 const port = 8080;
 
-import { authRouter } from "./Routes/Auth";
 import {receiveRouter} from "./Routes/Receive";
 import {sendRouter} from "./Routes/Send";
-import {resetRouter} from "./Routes/Reset";
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,10 +17,8 @@ app.listen( port, () => {
     console.log( `server started at http://localhost:${ port }` );
 });
 
-app.use("/auth", authRouter);
 app.use("/receive", receiveRouter);
 app.use("/send", sendRouter);
-app.use("/reset", resetRouter);
 
 // define a route handler for the default home page
 app.get( "/", ( req, res ) => {
