@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect('mongodb://127.0.0.1:27017/', {dbName: "chat"});
+mongoose.connect('mongodb://mongo:27017/', {dbName: "chat"});
 console.log("MongoDB Connected!");
 
 import express from "express";
