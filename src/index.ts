@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect('mongodb://mongo:27017/', {dbName: "chat"});
+mongoose.connect('mongodb://root:password123@mongodb-sharded-4-1647175611:27017/chat');
 console.log("MongoDB Connected!");
 
 import express from "express";
